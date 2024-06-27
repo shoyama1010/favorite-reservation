@@ -29,3 +29,4 @@
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 @endsection
+

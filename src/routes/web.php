@@ -24,12 +24,14 @@ Route::get('/', function () {
 Route::get('/', [ShopController::class, 'index'])->name('home');
 
 Route::middleware(['guest'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
     Route::get('/register', [UserController::class, 'showRegistrationForm'])->name('register');
+
     Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    
+
     Route::get('/mypage', [UserController::class, 'mypage'])->name('mypage');
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 

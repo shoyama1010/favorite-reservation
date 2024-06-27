@@ -9,17 +9,18 @@
 	<!-- 検索フォーム -->
 	<div class="search-container">
 		<form method="GET" action="{{ route('shop.searchByArea') }}">
-			<input type="text" name="area" placeholder="エリアで検索">
-			<button type="submit">検索</button>
+			<input type="text" name="area" placeholder="All erea">
+			<!-- <button type="submit">検索</button> -->
 		</form>
 		<form method="GET" action="{{ route('shop.searchByGenre') }}">
-			<input type="text" name="genre" placeholder="ジャンルで検索">
-			<button type="submit">検索</button>
+			<input type="text" name="genre" placeholder="All genre">
+			<!-- <button type="submit">検索</button> -->
 		</form>
 		<form method="GET" action="{{ route('shop.searchByName') }}">
-			<input type="text" name="name" placeholder="店名で検索">
-			<button type="submit">検索</button>
+			<input type="text" name="name" placeholder="All shop">
+			<!-- <button type="submit">検索</button> -->
 		</form>
+		<button type="submit">検索</button>
 	</div>
 
 	<div class="shop-list">
@@ -31,7 +32,7 @@
 			<p>{{ $shop->description }}</p>
 			<a href="{{ route('shop.detail', $shop->id) }}">詳しくみる</a>
 
-		<!-- お気に入り -->
+			<!-- お気に入り -->
 			@if(Auth::check() && Auth::user()->favorites->contains($shop->id))
 			<form method="POST" action="{{ route('shop.removeFavorite', $shop->id) }}">
 				@csrf

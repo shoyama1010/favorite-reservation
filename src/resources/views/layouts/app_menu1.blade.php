@@ -11,7 +11,6 @@
 	<div class="container">
 		@yield('content')
 	</div>
-
 	<!-- Menu1 Modal -->
 	<div id="menu1Modal" class="modal">
 		<div class="modal-content">
@@ -23,7 +22,6 @@
 			</ul>
 		</div>
 	</div>
-
 	<script src="{{ asset('js/app.js') }}"></script>
 </body>
 
